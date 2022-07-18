@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import {
   Box,
   Text,
@@ -10,14 +12,37 @@ import {
 import { CirclePlus } from 'tabler-icons-react';
 
 export default function Questionary({ placeholder, label, tasks }) {
+  const [tasksList, setTasksList] = useState([
+    {
+      checked: false,
+      value: '',
+    },
+  ]);
+
+  const handleOnClick = () => {
+    setTasksList([
+      ...tasksList,
+      {
+        checked: false,
+        value: '',
+      },
+    ]);
+  };
+
   return tasks ? (
     <Box className="p-4 w-full flex flex-col">
       <Text className="font-semibold text-sm mb-2">{label}</Text>
-      <Box className="flex">
-        <Checkbox size="lg" className="mr-2" />
-        <TextInput size="xs" className="w-full" />
-      </Box>
-      <Button leftIcon={<CirclePlus />} className="m-auto mt-4">
+      {tasksList.map(() => (
+        <Box className="flex mb-2">
+          <Checkbox size="lg" className="mr-2" />
+          <TextInput size="xs" className="w-full" placeholder="Task name" />
+        </Box>
+      ))}
+      <Button
+        leftIcon={<CirclePlus />}
+        className="m-auto mt-4"
+        onClick={handleOnClick}
+      >
         Add new task
       </Button>
     </Box>

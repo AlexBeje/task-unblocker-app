@@ -43,7 +43,7 @@ export default function Questionary({ placeholder, label, tasks }) {
         className="m-auto mt-1"
         onClick={handleOnClick}
       >
-        Add new task
+        Add new sub task
       </Button>
     </Box>
   ) : (

@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <Text
       className={`${
-        mobile ? 'text-6xl' : 'text-3xl'
+        mobile ? 'text-6xl' : 'text-5xl'
       } text-center font-bold m-8`}
     >
       Task Unblocker

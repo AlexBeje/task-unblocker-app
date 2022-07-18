@@ -7,7 +7,7 @@ import {
   Button,
 } from '@mantine/core';
 
-import { Database } from 'tabler-icons-react';
+import { CirclePlus } from 'tabler-icons-react';
 
 export default function Questionary({ placeholder, label, tasks }) {
   return tasks ? (
@@ -17,7 +17,9 @@ export default function Questionary({ placeholder, label, tasks }) {
         <Checkbox size="lg" className="mr-2" />
         <TextInput size="xs" className="w-full" />
       </Box>
-      <Button leftIcon={<Database />} className="m-auto mt-4" />
+      <Button leftIcon={<CirclePlus />} className="m-auto mt-4">
+        Add new task
+      </Button>
     </Box>
   ) : (
     <>

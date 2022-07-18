@@ -1,7 +1,16 @@
 import { Text } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 
 export default function Header() {
+  const mobile = useMediaQuery('(min-width: 900px)');
+
   return (
-    <Text className="text-6xl text-center font-bold m-8">Task Unblocker</Text>
+    <Text
+      className={`${
+        mobile ? 'text-6xl' : 'text-3xl'
+      } text-center font-bold m-8`}
+    >
+      Task Unblocker
+    </Text>
   );
 }

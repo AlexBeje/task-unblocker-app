@@ -12,7 +12,7 @@ export default function App() {
       placeholder: 'Main issue',
     },
     {
-      label: 'Divide the main issue in various tasks:',
+      label: 'Divide the main issue in various sub tasks:',
       placeholder: 'Sub tasks',
       tasks: true,
     },

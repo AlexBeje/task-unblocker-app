@@ -1,3 +1,33 @@
+import Header from './components/Header';
+import Questionary from './components/Questionary';
+
 export default function App() {
-  return <h1 className="text-6xl font-bold underline">Welcome!</h1>;
+  const questions = [
+    {
+      label: 'What is blocking you?',
+      placeholder: 'Issue',
+    },
+    {
+      label: 'What seems to be the main issue?',
+      placeholder: 'Main issue',
+    },
+    {
+      label: 'Divide the issue in various tasks:',
+      placeholder: 'Sub tasks',
+      tasks: true,
+    },
+  ];
+
+  return (
+    <>
+      <Header />
+      {questions.map((question) => (
+        <Questionary
+          label={question.label}
+          placeholder={question.placeholder}
+          tasks={question.tasks}
+        />
+      ))}
+    </>
+  );
 }

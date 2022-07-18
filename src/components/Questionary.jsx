@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 import {
   Box,
@@ -7,15 +7,15 @@ import {
   Textarea,
   TextInput,
   Button,
-} from '@mantine/core';
+} from "@mantine/core";
 
-import { CirclePlus } from 'tabler-icons-react';
+import { CirclePlus } from "tabler-icons-react";
 
 export default function Questionary({ placeholder, label, tasks }) {
   const [tasksList, setTasksList] = useState([
     {
       checked: false,
-      value: '',
+      value: "",
     },
   ]);
 
@@ -24,7 +24,7 @@ export default function Questionary({ placeholder, label, tasks }) {
       ...tasksList,
       {
         checked: false,
-        value: '',
+        value: "",
       },
     ]);
   };
@@ -32,8 +32,8 @@ export default function Questionary({ placeholder, label, tasks }) {
   return tasks ? (
     <Box className="p-4 w-full flex flex-col">
       <Text className="font-semibold text-sm mb-2">{label}</Text>
-      {tasksList.map(() => (
-        <Box className="flex mb-2">
+      {tasksList.map((_task, index) => (
+        <Box className="flex mb-2" key={index}>
           <Checkbox size="lg" className="mr-2" />
           <TextInput size="xs" className="w-full" placeholder="Sub task name" />
         </Box>
@@ -43,7 +43,7 @@ export default function Questionary({ placeholder, label, tasks }) {
         className="m-auto mt-1"
         onClick={handleOnClick}
       >
-        Add new sub task
+        Add a new sub task
       </Button>
     </Box>
   ) : (
@@ -52,7 +52,6 @@ export default function Questionary({ placeholder, label, tasks }) {
         className="p-4"
         placeholder={placeholder}
         label={label}
-        autosized
         minRows={2}
       />
     </>

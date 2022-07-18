@@ -10,7 +10,7 @@ export default function Header() {
         mobile ? 'text-7xl' : 'text-5xl'
       } text-center font-bold m-8`}
     >
-      Task Unblocker
+      Idea Generator
     </Text>
   );
 }

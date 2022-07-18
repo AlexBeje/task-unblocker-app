@@ -35,7 +35,7 @@ export default function Questionary({ placeholder, label, tasks }) {
       {tasksList.map(() => (
         <Box className="flex mb-2">
           <Checkbox size="lg" className="mr-2" />
-          <TextInput size="xs" className="w-full" placeholder="Task name" />
+          <TextInput size="xs" className="w-full" placeholder="Sub task name" />
         </Box>
       ))}
       <Button

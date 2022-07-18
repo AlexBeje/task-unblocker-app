@@ -40,7 +40,7 @@ export default function Questionary({ placeholder, label, tasks }) {
       ))}
       <Button
         leftIcon={<CirclePlus />}
-        className="m-auto mt-4"
+        className="m-auto mt-1"
         onClick={handleOnClick}
       >
         Add new task
